@@ -1,25 +1,19 @@
 import os
 import json
 from flask import Flask
+from db2client import db2Access
+
 application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    data = os.environ['db2-cred']
-    print('data1:',data)
-    data = json.loads(data)
-    print('data1:',data)
     return "OpenShift Hello World 4!"
 
 @application.route("/cars")
 def cars():
-    data = '{"imageList": [\
-   {"url":"test1.jpg","time":"25.02.2020 15:07"},\
-   {"url":"test2.jpg","time":"25.02.2020 15:11"},\
-   {"url":"test3.jpg","time":"25.02.2020 15:22"},\
-   {"url":"test4.jpg","time":"26.02.2020 15:25"} \
-   ]}'
-    return data
+    return mydb2.get_car_images()
 
 if __name__ == "__main__":
+    mydb2 = db2Access()
     application.run()
+    mydb2.close()
