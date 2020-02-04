@@ -3,7 +3,7 @@ import json
 from flask import Flask
 from db2client import db2Access
 
-mydb2 = ""
+mydb2 = db2Access()
 
 application = Flask(__name__)
 
@@ -16,6 +16,4 @@ def cars():
     return mydb2.get_car_images()
 
 if __name__ == "__main__":
-    mydb2 = db2Access()
     application.run()
-    mydb2.close()
