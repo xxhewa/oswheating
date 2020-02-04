@@ -3,7 +3,7 @@ import json
 from flask import Flask
 from db2client import db2Access
 
-mydb2 = db2Access()
+mydb2 = ""
 
 application = Flask(__name__)
 
