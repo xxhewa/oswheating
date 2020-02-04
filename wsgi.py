@@ -1,8 +1,14 @@
+import os
+import json
 from flask import Flask
 application = Flask(__name__)
 
 @application.route("/")
 def hello():
+    data = os.environ['db2-secret']
+    print('data1:',data)
+    data = json.loads(data)
+    print('data1:',data)
     return "OpenShift Hello World 4!"
 
 @application.route("/cars")
