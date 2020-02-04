@@ -5,9 +5,14 @@ application = Flask(__name__)
 def hello():
     return "OpenShift Hello World 4!"
 
-#@application.route("/cars")
-#def cars():
-#    return '["test1.jpg", "test2.jpg", "test3.jpg"]'
+@application.route("/cars")
+def cars():
+     data = '{"imageList": [\
+   {"url":"test1.jpg","time":"25.02.2020 15:07"},\
+   {"url":"test2.jpg","time":"25.02.2020 15:11"},\
+   {"url":"test3.jpg","time":"25.02.2020 15:22"} \
+   ]}'
+    return data
 
 if __name__ == "__main__":
     application.run()
