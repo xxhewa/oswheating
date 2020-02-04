@@ -5,7 +5,7 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    data = os.environ['db2-secret']
+    data = os.environ['db2-cred']
     print('data1:',data)
     data = json.loads(data)
     print('data1:',data)
