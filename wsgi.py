@@ -3,6 +3,8 @@ import json
 from flask import Flask
 from db2client import db2Access
 
+mydb2 = db2Access()
+
 application = Flask(__name__)
 
 @application.route("/")
