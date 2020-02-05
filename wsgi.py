@@ -2,6 +2,7 @@ import os
 import json
 from flask import Flask
 from db2client import db2Access
+from flask import make_response
 
 mydb2 = db2Access()
 
@@ -13,11 +14,15 @@ def hello():
 
 @application.route("/cars")
 def cars():
-    return mydb2.get_categorized_images('C')
+    r = make_response(mydb2.get_categorized_images('C'))
+    r.headers.set('Access-Control-Allow-Origin', 'appdomain.cloud')
+    return r
 
 @application.route("/persons")
 def persons():
-    return mydb2.get_categorized_images('P')
+    r = make_response(mydb2.get_categorized_images('P'))
+    r.headers.set('Access-Control-Allow-Origin', 'appdomain.cloud')
+    return r
 
 if __name__ == "__main__":
     application.run()
