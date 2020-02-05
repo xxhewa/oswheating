@@ -45,9 +45,9 @@ class db2Access:
     def close(self):
         ibm_db.close(self.db2conn)
     
-    def get_car_images(self):
+    def get_categorized_images(self, category):
         get_images_stmt = "SELECT CATEGORY, LINK, TRAFFIC_TIMESTAMP FROM OSWTRAFFIC\
-             WHERE CATEGORY = 'C' AND (TRAFFIC_TIMESTAMP > NOW() - 24 HOURS);"
+             WHERE CATEGORY = '"+category+"' AND (TRAFFIC_TIMESTAMP > NOW() - 24 HOURS);"
         stmt = ibm_db.prepare(self.db2conn, get_images_stmt) 
         ibm_db.execute(stmt)
         result = {}

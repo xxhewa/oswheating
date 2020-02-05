@@ -13,7 +13,11 @@ def hello():
 
 @application.route("/cars")
 def cars():
-    return mydb2.get_car_images()
+    return mydb2.get_categorized_images('C')
+
+@application.route("/persons")
+def cars():
+    return mydb2.get_categorized_images('P')
 
 if __name__ == "__main__":
     application.run()
