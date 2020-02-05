@@ -16,7 +16,7 @@ def cars():
     return mydb2.get_categorized_images('C')
 
 @application.route("/persons")
-def cars():
+def persons():
     return mydb2.get_categorized_images('P')
 
 if __name__ == "__main__":
