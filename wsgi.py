@@ -27,9 +27,10 @@ def persons():
 
 SITE_NAME="https://s3.eu-de.cloud-object-storage.appdomain.cloud/osw-bucket-glwiosgnsciuvwlto/"
 
-@application.route("/index.html")
-def proxy1():
-  return get(f'{SITE_NAME}myjavascript.html').content
+@application.route('/', defaults={'path': 'myjavascript.html'})
+@application.route('/<path:path>')
+def proxy(path):
+  return get(f'{SITE_NAME}{path}').content
 
 if __name__ == "__main__":
     application.run()
