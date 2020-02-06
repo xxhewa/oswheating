@@ -47,7 +47,8 @@ class db2Access:
     
     def get_categorized_images(self, category):
         get_images_stmt = "SELECT CATEGORY, LINK, TRAFFIC_TIMESTAMP FROM OSWTRAFFIC\
-             WHERE CATEGORY = '"+category+"' AND (TRAFFIC_TIMESTAMP > NOW() - 24 HOURS);"
+             WHERE CATEGORY = '"+category+"' AND (TRAFFIC_TIMESTAMP > NOW() - 24 HOURS)\
+             ORDER BY TRAFFIC_TIMESTAMP DESC;"
         stmt = ibm_db.prepare(self.db2conn, get_images_stmt) 
         ibm_db.execute(stmt)
         result = {}
