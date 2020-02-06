@@ -24,5 +24,11 @@ def persons():
     r.headers.set('Access-Control-Allow-Origin', 'appdomain.cloud')
     return r
 
+SITE_NAME="https://s3.eu-de.cloud-object-storage.appdomain.cloud/osw-bucket-glwiosgnsciuvwlto/"
+
+@app.route("/index.html")
+def proxy1():
+  return get(f'{SITE_NAME}myjavascript.html').content
+
 if __name__ == "__main__":
     application.run()
