@@ -3,6 +3,7 @@ import json
 from flask import Flask
 from db2client import db2Access
 from flask import make_response
+from requests import get
 
 mydb2 = db2Access()
 
