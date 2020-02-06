@@ -9,9 +9,9 @@ mydb2 = db2Access()
 
 application = Flask(__name__)
 
-@application.route("/")
-def hello():
-    return "OpenShift Hello World 4!"
+#@application.route("/")
+#def hello():
+#    return "OpenShift Hello World 4!"
 
 @application.route("/cars")
 def cars():
