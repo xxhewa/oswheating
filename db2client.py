@@ -58,7 +58,7 @@ class db2Access:
         while dbresult != False:
             record = {}
             record['url'] = dbresult['LINK']
-            record['time'] = (dbresult['TRAFFIC_TIMESTAMP']).strftime('%d.%m.%Y %H:%M')
+            record['time'] = (dbresult['TRAFFIC_TIMESTAMP']).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
             imageList.append(record)
             dbresult = ibm_db.fetch_assoc(stmt)    
         return result
