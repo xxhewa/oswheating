@@ -38,9 +38,9 @@ def proxy(path):
 def getIP():
     serverIP = get('http://api.ipify.org?format=json').content
     requestIP = "{'requestorIP':'"+request.remote_addr+"'}"
-    result = "{'ipInformation':["+
-        serverIP+","+
-        requestIP+
+    result = "{'ipInformation':["+\
+        serverIP+","+\
+        requestIP+\
         "]}" 
     return result 
 
