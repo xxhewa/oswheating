@@ -3,6 +3,8 @@ import json
 from flask import Flask
 from db2client import db2Access
 from flask import make_response
+from flask import request
+from flask import jsonify
 from requests import get
 
 mydb2 = db2Access()
