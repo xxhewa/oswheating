@@ -32,5 +32,10 @@ SITE_NAME="https://s3.eu-de.cloud-object-storage.appdomain.cloud/osw-bucket-glwi
 def proxy(path):
   return get(f'{SITE_NAME}{path}').content
 
+
+@application.route('/ip')
+def getIP():
+  return get('http://api.ipify.org?format=json').content
+
 if __name__ == "__main__":
     application.run()
