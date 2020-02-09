@@ -4,7 +4,6 @@ from flask import Flask
 from db2client import db2Access
 from flask import make_response
 from flask import request
-from flask import jsonify
 from requests import get
 
 mydb2 = db2Access()
@@ -38,8 +37,11 @@ def proxy(path):
 @application.route('/ip')
 def getIP():
     serverIP = get('http://api.ipify.org?format=json').content
-    requestIP = request.remote_addr
-    result = jsonify({'ipInformation':[serverIP, {'requestorIP': requestIP}]}) 
+    requestIP = "{'requestorIP':'"+request.remote_addr+"'}"
+    result = "{'ipInformation':["+
+        serverIP+","+
+        requestIP+
+        "]}" 
     return result 
 
 if __name__ == "__main__":
