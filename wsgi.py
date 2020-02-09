@@ -35,7 +35,10 @@ def proxy(path):
 
 @application.route('/ip')
 def getIP():
-  return get('http://api.ipify.org?format=json').content
+    serverIP = get('http://api.ipify.org?format=json').content
+    requestIP = request.remote_addr
+    result = jsonify({'ipInformation':[serverIP, {'requestorIP': requestIP}]}) 
+    return result 
 
 if __name__ == "__main__":
     application.run()
