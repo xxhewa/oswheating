@@ -32,7 +32,10 @@ def push():
     global temperature4
 
     temperature1 = float(request.form.get('temperature1'))
-    return "got it..."+str(temperature1)
+    temperature2 = float(request.form.get('temperature2'))
+    temperature3 = float(request.form.get('temperature3'))
+    temperature4 = float(request.form.get('temperature4'))
+    return "got it...:"+str(temperature1)+";"+str(temperature2)+";"+str(temperature3)+";"+str(temperature4)
 
 @application.route("/persons")
 def persons():
