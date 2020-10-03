@@ -24,7 +24,7 @@ def hello():
 @application.route("/push/", methods=['POST'])
 def push():
     temperature1 = float(request.form.get('temperature1'))
-    return "got it..."
+    return "got it..."+str(temperature1)
 
 @application.route("/persons")
 def persons():
