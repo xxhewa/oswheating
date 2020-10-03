@@ -19,7 +19,7 @@ def hello():
     result = result + "Temperature 2:"+str(temperature2)+ " °C<br>"
     result = result + "Temperature 3:"+str(temperature3)+ " °C<br>"
     result = result + "Temperature 4:"+str(temperature4)+ " °C<br>" 
-    return result
+    return "got it..."
 
 @application.route("/push/", methods=['POST'])
 def push():
