@@ -22,6 +22,16 @@ def hello():
     result = result + "Temperature 4:"+str(temperature4)+ " °C<br>" 
     return result
 
+@application.route("/monitor")
+def monitor():
+
+    result = ""
+    result = result + "Temperature_1 "+str(temperature1)+"\n"
+    result = result + "Temperature_2:"+str(temperature2)+"\n"
+    result = result + "Temperature_3:"+str(temperature3)+"\n"
+    result = result + "Temperature_4:"+str(temperature4)+"\n"
+    return result
+
 @application.route("/push/", methods=['POST'])
 def push():
 
