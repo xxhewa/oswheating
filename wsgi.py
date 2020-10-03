@@ -7,13 +7,14 @@ from requests import get
 
 application = Flask(__name__)
 
-global temperature1 = 0
-global temperature2 = 0
-global temperature3 = 0
-global temperature4 = 0
+temperature1 = 0
+temperature2 = 0
+temperature3 = 0
+temperature4 = 0
 
 @application.route("/")
 def hello():
+
     result = "Hello World on Openshift, here is another update!<br>"
     result = result + "Temperature 1:"+str(temperature1)+ " °C<br>"
     result = result + "Temperature 2:"+str(temperature2)+ " °C<br>"
@@ -23,6 +24,13 @@ def hello():
 
 @application.route("/push/", methods=['POST'])
 def push():
+
+    # using global variables for changing the values
+    gobal temperature1
+    gobal temperature2
+    gobal temperature3
+    gobal temperature4
+
     temperature1 = float(request.form.get('temperature1'))
     return "got it..."+str(temperature1)
 
