@@ -26,10 +26,10 @@ def hello():
 def push():
 
     # using global variables for changing the values
-    gobal temperature1
-    gobal temperature2
-    gobal temperature3
-    gobal temperature4
+    global temperature1
+    global temperature2
+    global temperature3
+    global temperature4
 
     temperature1 = float(request.form.get('temperature1'))
     return "got it..."+str(temperature1)
