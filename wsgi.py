@@ -21,10 +21,10 @@ def hello():
     result = result + "Temperature 4:"+str(temperature4)+ " °C<br>" 
     return result
 
-@application.route("/cars")
-def cars():
-    r.headers.set('Access-Control-Allow-Origin', 'appdomain.cloud')
-    return r
+@application.route("/push/", methods=['POST'])
+def push():
+    temperature1 = float(request.form.get('temperature1'))
+    return
 
 @application.route("/persons")
 def persons():
