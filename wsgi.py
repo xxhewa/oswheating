@@ -9,7 +9,7 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    return "Hello World on Openshift, here is an update!"
+    return "Hello World on Openshift, here is another update!"
 
 @application.route("/cars")
 def cars():
