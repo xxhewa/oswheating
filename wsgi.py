@@ -14,11 +14,11 @@ temperature4 = 0
 
 @application.route("/")
 def hello():
-    result = "Hello World on Openshift, here is another update!\n"
-    result = result + "Temperature 1:"+str(temperature1)+ " C\n"
-    result = result + "Temperature 2:"+str(temperature2)+ " C\n"
-    result = result + "Temperature 3:"+str(temperature3)+ " C\n"
-    result = result + "Temperature 4:"+str(temperature4)+ " C\n" 
+    result = "Hello World on Openshift, here is another update!<br>"
+    result = result + "Temperature 1:"+str(temperature1)+ " °C<br>"
+    result = result + "Temperature 2:"+str(temperature2)+ " °C<br>"
+    result = result + "Temperature 3:"+str(temperature3)+ " °C<br>"
+    result = result + "Temperature 4:"+str(temperature4)+ " °C<br>" 
     return result
 
 @application.route("/cars")
