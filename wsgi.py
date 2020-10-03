@@ -7,9 +7,9 @@ from requests import get
 
 application = Flask(__name__)
 
-#@application.route("/")
-#def hello():
-#    return "OpenShift Hello World 4!"
+@application.route("/")
+def hello():
+    return "OpenShift Hello World on Openshift!"
 
 @application.route("/cars")
 def cars():
