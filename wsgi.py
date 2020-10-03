@@ -7,10 +7,10 @@ from requests import get
 
 application = Flask(__name__)
 
-temperature1 = 0
-temperature2 = 0
-temperature3 = 0
-temperature4 = 0
+global temperature1 = 0
+global temperature2 = 0
+global temperature3 = 0
+global temperature4 = 0
 
 @application.route("/")
 def hello():
