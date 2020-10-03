@@ -7,9 +7,19 @@ from requests import get
 
 application = Flask(__name__)
 
+temperature1 = 0
+temperature2 = 0
+temperature3 = 0
+temperature4 = 0
+
 @application.route("/")
 def hello():
-    return "Hello World on Openshift, here is another update!"
+    result = "Hello World on Openshift, here is another update!\n"
+    result = result + "Temperature 1:"+str(temperature1)+ " C\n"
+    result = result + "Temperature 2:"+str(temperature2)+ " C\n"
+    result = result + "Temperature 3:"+str(temperature3)+ " C\n"
+    result = result + "Temperature 4:"+str(temperature4)+ " C\n" 
+    return result
 
 @application.route("/cars")
 def cars():
