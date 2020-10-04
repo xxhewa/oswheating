@@ -47,28 +47,5 @@ def push():
     temperature4 = float(request.form.get('temperature4'))
     return "got it...:"+str(temperature1)+";"+str(temperature2)+";"+str(temperature3)+";"+str(temperature4)
 
-@application.route("/persons")
-def persons():
-    r.headers.set('Access-Control-Allow-Origin', 'appdomain.cloud')
-    return r
-
-SITE_NAME="https://s3.eu-de.cloud-object-storage.appdomain.cloud/osw-bucket-glwiosgnsciuvwlto/"
-
-@application.route('/', defaults={'path': 'myjavascript.html'})
-@application.route('/<path:path>')
-def proxy(path):
-  return get(f'{SITE_NAME}{path}').content
-
-
-@application.route('/ip')
-def getIP():
-    serverIP = get('http://api.ipify.org?format=json').content.decode(encoding='UTF-8')
-    requestIP = "{'requestorIP':'"+request.remote_addr+"'}"
-    result = "{'ipInformation':["+\
-        serverIP+","+\
-        requestIP+\
-        "]}" 
-    return result 
-
 if __name__ == "__main__":
     application.run()
