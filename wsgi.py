@@ -22,7 +22,7 @@ def hello():
     result = result + "Temperature 4:"+str(temperature4)+ " °C<br>" 
     return result
 
-@application.route("/monitor")
+@application.route("/metrics")
 def monitor():
 
     result = ""
