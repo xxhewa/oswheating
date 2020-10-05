@@ -31,4 +31,4 @@ scrape_configs:
   - job_name:       'xxhewa'
 
     static_configs:
-      - targets: ['oswheating-default.dte-ocp4-gewzvc-915b3b336cabec458a7c7ec2aa7c625f-0000.us-east.containers.appdomain.cloud:80']
+      - targets: ['172.21.184.95:80']
