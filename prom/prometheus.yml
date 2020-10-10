@@ -30,4 +30,4 @@ scrape_configs:
 ## get temperatures from http server
   - job_name:       'oswheating'
     static_configs:
-      - targets: ['172.21.136.184:8080']
+      - targets: ['oswheating:8080']
