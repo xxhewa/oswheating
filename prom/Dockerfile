@@ -1,4 +1,4 @@
 FROM prom/prometheus
 COPY ./prometheus.yml /etc/prometheus/
-CMD bash
+EXEC /bin/sh
 EXPOSE 9090
