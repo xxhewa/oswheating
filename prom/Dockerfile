@@ -1,4 +1,4 @@
 FROM prom/prometheus
 COPY ./prometheus.yml /etc/prometheus/
-RUN "/bin/sh"
+ENTRYPOINT ["tail", "-f", "/dev/null"]
 EXPOSE 9090
