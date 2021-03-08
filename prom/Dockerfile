@@ -1,4 +1,4 @@
 FROM prom/prometheus
 COPY ./prometheus.yml /etc/prometheus/
-RUN chgrp -R 0 /run && chmod -R g=u /run
+CMD bash
 EXPOSE 9090
